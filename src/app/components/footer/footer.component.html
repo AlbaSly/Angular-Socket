@@ -1,0 +1,9 @@
+<footer class="absolute bottom-0 left-0 right-0 bg-gray-800 py-8">
+    <div class="container mx-auto">
+        <p class="text-white">
+            Server Status:
+            <span *ngIf="webSocketService.socketStatus" class="text-green-500">Online</span>
+            <span *ngIf="!webSocketService.socketStatus" class="text-red-500">Offline</span>
+        </p>
+    </div>
+</footer>

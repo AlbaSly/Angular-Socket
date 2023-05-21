@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { WebSocketService } from './services/web-socket.service';
+import { ChatService } from './services/chat.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'socket-base';
+
+  constructor() {}
 }
