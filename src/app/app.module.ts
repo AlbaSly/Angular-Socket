@@ -9,6 +9,10 @@ import { environment } from 'src/environments/environment.development';
 import { FooterComponent } from './components/footer/footer.component';
 import { ChatComponent } from './components/chat/chat.component';
 import { FormsModule } from '@angular/forms';
+import { UserListComponent } from './components/user-list/user-list.component';
+import { LoginComponent } from './pages/login/login.component';
+import { MessagesComponent } from './pages/messages/messages.component';
+import { AppRoutingModule } from './app-routing.module';
 
 /**Configuración del socket */
 const config: SocketIoConfig = { 
@@ -20,12 +24,18 @@ const config: SocketIoConfig = {
   declarations: [
     AppComponent,
     FooterComponent,
-    ChatComponent
+    ChatComponent,
+    UserListComponent,
+    LoginComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    SocketIoModule.forRoot(config)
+    /**Módulo de Sockets */
+    SocketIoModule.forRoot(config),
+    /**Módulo de rutas */
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

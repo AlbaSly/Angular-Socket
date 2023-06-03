@@ -24,8 +24,8 @@ export class ChatService {
   sendMessage(msg: string) {
     /**Datos a enviar desde el socket */
     const payload = {
-      de: 'Raxel',
-      cuerpo: msg,
+      from: this.webSocketService.user,
+      body: msg,
     };
     
     /**Se emite hacia el servidor los datos del payload */
@@ -38,5 +38,13 @@ export class ChatService {
    */
   getMessages() {
     return this.webSocketService.listen('mensaje-nuevo');
+  }
+
+  /**
+   * Se obtienen los mensajes privados emitidos por el servidor
+   * @returns Observable con la información en tiempo real
+   */
+  getPrivateMessages() {
+    return this.webSocketService.listen('mensaje-privado'); 
   }
 }
